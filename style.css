@@ -1,0 +1,31 @@
+* {
+ font-family: Helvetica;
+ font-size: 12px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 26px;
+}
+h3 {
+ font-size: 22px;
+ text-align: left;
+ width: 1000px;
+ color: #42c583;
+}
+
+table {
+ border: solid black 1px;
+}
+
+
+th {
+ width: 60px;
+ border: solid black 1px;
+}
+
+td {
+ text-align: center;
+ height: 30px;
+ border: solid black 1px;
+}

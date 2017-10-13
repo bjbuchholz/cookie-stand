@@ -2,7 +2,7 @@
 //create an array of open store hours
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
-//First and Pike Location-------------------------------------------------------
+//---First and Pike Location---
 var firstAndPike = {
   name: 'First and Pike',
   //creating my key value pairs inside of my object they are called properties
@@ -53,7 +53,7 @@ var firstAndPike = {
 };
 firstAndPike.render();
 
-//SeaTac Airport Location-------------------------------------------------------
+//---SeaTac Airport Location---
 var seaTacAirport = {
   name: 'SeaTac Airport',
   //creating my key value pairs inside of my object they are called properties
@@ -78,6 +78,7 @@ var seaTacAirport = {
       console.log(this.cookiesSoldByHour[j]);
     }
   },
+
   render: function() {
     var seatacairport = document.getElementById('seatacairport');
     var seatac = document.getElementById('seatac');
@@ -104,7 +105,7 @@ var seaTacAirport = {
 };
 seaTacAirport.render();
 
-//Seattle Center Location-------------------------------------------------------
+//---Seattle Center Location---
 var seatleCenter = {
   name: 'Seattle Center',
   //creating my key value pairs inside of my object they are called properties
@@ -155,7 +156,7 @@ var seatleCenter = {
 };
 seatleCenter.render();
 
-//Capitol Hill Location---------------------------------------------------------
+//---Capitol Hill Location---
 var capitolHill = {
   name: 'Capitol Hill',
   //creating my key value pairs inside of my object they are called properties
@@ -206,7 +207,7 @@ var capitolHill = {
 };
 capitolHill.render();
 
-//Alki Location-----------------------------------------------------------------
+//---Alki Location---
 var alkiBeach = {
   name: 'Alki',
   //creating my key value pairs inside of my object they are called properties
