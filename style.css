@@ -1,7 +1,7 @@
 * {
  font-family: Helvetica , blue;
  font-size: 12px;
- background-color: #937f73;
+ background-color: #B6DFE8;
 }
 
 h1{
@@ -12,8 +12,8 @@ h1{
   border: solid  #fa3753 10px;
   border-radius: 25px;
   background-color:#9ea2a6 ;
-  margin: 10px 600px 10px 10px;
-  padding-left:100px;
+  margin:10px 200px 20px 200px;
+  padding-left:300px;
 }
 
 
@@ -26,3 +26,32 @@ h3 {
  border: solid black 1px;
  background-color: #204c72;
 }
+.coffee_background {
+
+}
+#salmon {
+float: center;
+padding-left: 400px;
+
+
+}
+ #salmonlogo{
+   padding-left: 400px;
+
+}
+
+ #cookiestands {
+   font-family: 'Montseratt';
+   font-size: 22px;
+   margin:10px;
+   text-align: center;
+   width: 98%;
+   color: #black;
+   border: solid #fa3753 20px;
+   background-color: #204c72;
+   border-radius: 15px;
+
+
+
+
+ }
