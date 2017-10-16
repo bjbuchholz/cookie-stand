@@ -96,8 +96,9 @@ function makesNetTotalrow(index) {
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr');
   trEl.textContent = 'Totals: ';
-  trEl.appendChild(tdEl);
-  tdEl.textContent = allLocations.totalCookies;
+  tdEl.appendChild(trEl);
+  console.log(trEl);
+  tdEl.textContent = this.totalCookies;
   allLocations[index].calcRandCustByHour();
   allLocations[index].calcCookiesSoldByHour();
   allLocations[index].calcTotalCookies();
