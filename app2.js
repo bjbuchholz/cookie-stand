@@ -104,7 +104,7 @@ generateAllStoresRow();
 function makesNetTotalrow(index) {
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr');
-  trEl.textContent = 'Totals: ';
+  tdEl.textContent = 'Totals: ';
   tdEl.appendChild(trEl);
   console.log(trEl);
   tdEl.textContent = this.totalCookies;
@@ -119,7 +119,3 @@ function makesNetTotalrow(index) {
   cookiestands.appendChild(trEl);
 }
 makesNetTotalrow();
-//Total by each hour row
-
-// function makeDataRow() {
-//  var cookiestands = document.get

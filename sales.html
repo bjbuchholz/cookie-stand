@@ -7,15 +7,34 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   </head>
   <body>
-    <div id='salmonlogo'>
-     <img src= 'img/salmon_cookie.png'  alt'Salmon cookie logo'  width="350px"<p>Here is your webpage for tracking sales. This will track your sales for each store location. It will show you the per hour sales and totals so you can better track your sales goals.</p>
+    <!-- <div id="topimage">
+      <img src= "img/seattle-skyline.jpg" alt="Seattl Skyline" width= "100%">
+    </div> -->
+    <div id="salmonlogo">
+     <img src= "img/salmon_cookie.png"  alt="Salmon cookie logo" width="350px">
     </div>
+    <p>Here is your webpage for tracking sales. This will track your sales for each store location.<br> It will show you the per hour sales and totals so you can better track your sales goals.</p>
+    <form id="createNewStore">
+      <fieldset>
+        <legend>Add Store Location</legend>
+        <label for="storename">Name of Location: </label>
+        <input name="storename" type="text" />
+        <label for="mincust">Minimum Customers per Hour: </label>
+        <input name="mincust" type="text" /><br>
+        <label for="maxcust">Maximum Customers per Hour: </label>
+        <input name="maxcust" type="text"/>
+        <label for="avgcook">Average Cookies per Sale: </label>
+        <input name="avgcook" type="text"/>
+        <button type="submit">Create a new store</button>
+      </fieldset>
+    </form>
+    <p>Above is a form that you can use to add new stores as your business grows.<br> Just fill in the empty field and it will populate a new store for you.</p>
 </div>
     <div>
       <table id="cookiestands"></table>
     </div>
-    <div id='salmon'>
-      <img src= 'img/salmon.png'  alt'Salmon'  width="600px">
+    <div id="salmon">
+      <img src= "img/salmon.png"  alt"Salmon"  width="600px">
     </div>
 
 <script src= "app2.js" type="text/javascript"></script>

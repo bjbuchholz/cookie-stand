@@ -2,17 +2,25 @@
  font-family: Helvetica , blue;
  font-size: 12px;
  background-color: #B6DFE8;
+ box-sizing: border-box;
 }
 
+.clearfix {
+  overflow: auto;
+}
+#topimage{
+  box-sizing: border-box;
+  position: static;
+  opacity: .8;
+}
 h1{
 
 }
 p {
-font-size: 18px;
-text-align: left;
-
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
 }
-
 
 h3 {
  font-family: 'Montseratt';
@@ -24,15 +32,15 @@ h3 {
  background-color: #204c72;
  border-radius: 25px;
 }
+
 .coffee_background {
 
 }
 /*sales.html logo tags*/
 #salmonlogo{
-  padding: 20px 50px 20px 50px;
-  float: right;
+  padding: 0px 50px 20px 50px;
+  float: left;
   font-size: 24px;
-  text-align: left;
 }
 /*main customer facing page logo*/
 .salmonlogo{
@@ -40,7 +48,6 @@ h3 {
  }
 
  #locations {
-
 
  }
 
@@ -57,8 +64,7 @@ h3 {
 }
 
 #salmon {
-float: center;
-padding-left: 25%;
-
+  float: center;
+  padding-left: 25%;
 
 }
