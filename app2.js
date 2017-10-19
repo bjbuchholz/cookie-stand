@@ -17,6 +17,7 @@ function MakeLocation(name, minCustPerHour, maxCustPerHour, avgCookieSoldPerHour
   this.cookiesSoldByHour = [];
   this.totalCookies = [];
   allLocations.push(this);
+  //Method for random customer by hour
   this.calcRandCustByHour = function() {
     for(var i = 0; i < hours.length; i++) {
       this.randCustByHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour);
@@ -50,6 +51,7 @@ function makeStands() {
   //make one for each store
 };
 makeStands();
+
 //Makes Header row and inputs times
 function makeHeaderRow(){
   //console.log('entered into make header row');
@@ -64,11 +66,15 @@ function makeHeaderRow(){
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Totals ';
+  trEl.appendChild(tdEl);
   cookiestands.appendChild(trEl);
 }
+
 makeHeaderRow();
 
-//store row
+//Makes store row
 function makeStoresRow(index) {
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr'); //creates table div.
@@ -81,13 +87,16 @@ function makeStoresRow(index) {
     tdEl.textContent = allLocations[index].cookiesSoldByHour[j];
     trEl.appendChild(tdEl);
   }
+  var tdEl = document.createElement('td');
+  tdEl.textContent = allLocations[index].totalCookies;
+  trEl.appendChild(tdEl);
   cookiestands.appendChild(trEl);
-
 }
 function generateAllStoresRow () {
   for( var k = 0; k < allLocations.length; k++) {
     makeStoresRow(k);
   }
+
 }
 generateAllStoresRow();
 
