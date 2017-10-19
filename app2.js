@@ -67,7 +67,7 @@ function makeHeaderRow(){
     trEl.appendChild(thEl);
   }
   var tdEl = document.createElement('td');
-  tdEl.textContent = 'Totals ';
+  tdEl.textContent = 'Daily Totals ';
   trEl.appendChild(tdEl);
   cookiestands.appendChild(trEl);
 }
