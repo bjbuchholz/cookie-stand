@@ -54,21 +54,22 @@ makeStands();
 
 //Makes Header row and inputs times
 function makeHeaderRow(){
-  //console.log('entered into make header row');
+  // console.log('entered into make header row');
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr'); //creates table div.
   var tdEl = document.createElement('td');
   tdEl.textContent = 'Hours: ';
   trEl.appendChild(tdEl);
+  console.log(trEl);
   for(var i = 0; i < hours.length; i++){
     //console.log(hours[i]);
     var thEl = document.createElement('th'); //creates top table row.
     thEl.textContent = hours[i];
     trEl.appendChild(thEl);
   }
-  var tdEl = document.createElement('td');
-  tdEl.textContent = 'Daily Totals ';
-  trEl.appendChild(tdEl);
+  var thEL = document.createElement('th');
+  thEL.textContent = 'Daily Totals ';
+  trEl.appendChild(thEL);
   cookiestands.appendChild(trEl);
 }
 
@@ -101,21 +102,22 @@ function generateAllStoresRow () {
 generateAllStoresRow();
 
 //Generates footer row and genertes total row data
-function makesNetTotalrow(index) {
-  var cookiestands = document.getElementById('cookiestands');
-  var trEl = document.createElement('tr');
-  tdEl.textContent = 'Totals: ';
-  tdEl.appendChild(trEl);
-  console.log(trEl);
-  tdEl.textContent = this.totalCookies;
-  allLocations[index].calcRandCustByHour();
-  allLocations[index].calcCookiesSoldByHour();
-  allLocations[index].calcTotalCookies();
-  for( var l = 0; l < allLocations[index].length; l++) {
-    var tdEl = documnet.createElement('td');
-    tdEl.textContent = allLocations[index].totalCookies;
-    trEl.appendChild(tdEl);
-  }
-  cookiestands.appendChild(trEl);
-}
-makesNetTotalrow();
+// function makesNetTotalRow(index) {
+//   var cookiestands = document.getElementById('cookiestands');
+//   var trEl = document.createElement('tr');
+//   var tdEl = document.createElement('td');
+//   tdEl.textContent = 'Total: ';
+//   trEl.appendChild(tdEl);
+//   console.log(trEl);
+//   tdEl.textContent = this.totalCookies;
+//   allLocations[index].calcRandCustByHour();
+//   allLocations[index].calcCookiesSoldByHour();
+//   allLocations[index].calcTotalCookies();
+//   for( var l = 0; l < allLocations[index].length; l++) {
+//     var tdEl = documnet.createElement('td');
+//     tdEl.textContent = allLocations[index].totalCookies;
+//     trEl.appendChild(tdEl);
+//   }
+//   cookiestands.appendChild(trEl);
+// }
+// makesNetTotalRow();
