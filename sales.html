@@ -18,14 +18,14 @@
       <fieldset>
         <legend>Add Store Location</legend>
         <label for="storename">Name of Location: </label>
-        <input name="storename" type="text" />
+        <input id="storename" type="text" />
         <label for="mincust">Minimum Customers per Hour: </label>
-        <input name="mincust" type="text" /><br>
+        <input id="mincust" type="number" /><br>
         <label for="maxcust">Maximum Customers per Hour: </label>
-        <input name="maxcust" type="text"/>
+        <input id="maxcust" type="number"/>
         <label for="avgcook">Average Cookies per Sale: </label>
-        <input name="avgcook" type="text"/>
-        <button type="submit">Create a new store</button>
+        <input id="avgcook" type="number"/>
+        <button id="newstore" type="submit">Create a new store</button>
       </fieldset>
     </form>
     <p>Above is a form that you can use to add new stores as your business grows.<br> Just fill in the empty field and it will populate a new store for you.</p>
