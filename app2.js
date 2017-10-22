@@ -15,21 +15,21 @@ function MakeLocation(name, minCustPerHour, maxCustPerHour, avgCookieSoldPerHour
   this.avgCookieSoldPerHour = avgCookieSoldPerHour;
   this.randCustByHour = [];
   this.cookiesSoldByHour = [];
-  this.totalCookies = [];
+  this.totalCookies = 0;
   allLocations.push(this);
 
   //Method for random customer by hour
   this.calcRandCustByHour = function() {
     for(var i = 0; i < hours.length; i++) {
       this.randCustByHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour);
-      console.log(this.randCustByHour[i]);
+      // console.log(this.randCustByHour[i]);
     }
   },
   //method for cookies sold by hours
   this.calcCookiesSoldByHour = function() {
     for(var j = 0; j < hours.length; j++) {
       this.cookiesSoldByHour.push(Math.round(this.avgCookieSoldPerHour * this.randCustByHour[j]));
-      console.log(this.cookiesSoldByHour[j]);
+      // console.log(this.cookiesSoldByHour[j]);
     }
   },
   //Method for calculating total cookies
@@ -38,8 +38,8 @@ function MakeLocation(name, minCustPerHour, maxCustPerHour, avgCookieSoldPerHour
     for(var l = 0; l < hours.length; l++) {
       sum += (this.randCustByHour[l] + this.cookiesSoldByHour[l]);
     }
-    this.totalCookies.push(sum);
-    console.log('Total: ' + sum);
+    this.totalCookies = sum;
+    // console.log('Total: ' + sum);
   };
 };
 
@@ -91,8 +91,10 @@ function makeStoresRow(index) {
   var tdEl = document.createElement('td');
   tdEl.textContent = allLocations[index].totalCookies;
   trEl.appendChild(tdEl);
+  console.log(tdEl);
   cookiestands.appendChild(trEl);
 }
+
 function generateAllStoresRow () {
   for( var k = 0; k < allLocations.length; k++) {
     makeStoresRow(k);
@@ -101,26 +103,52 @@ function generateAllStoresRow () {
 }
 generateAllStoresRow();
 
+//Generates footer row and genertes total row data
+function makesNetTotalRow() {
+  var cookiestands = document.getElementById('cookiestands');
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.setAttribute('id','total');// gives created row an ID.
+  tdEl.textContent = 'Total: ';
+  trEl.appendChild(tdEl);
+  // cookiestands.appendChild(trEl);
+  for( var l = 0; l < hours.length; l++) {
+    var totalCookiesPerHour = 0;
+    var tdEl = document.createElement('td');
+    for(var m = 0; m < allLocations.length; m++) {
+      totalCookiesPerHour += allLocations[m].cookiesSoldByHour[l];
+    }
+    // console.log(totalCookiesPerHour);
+    tdEl = document.createElement('td');
+    tdEl.textContent = totalCookiesPerHour;
+    //console.log(tdEl);
+    trEl.appendChild(tdEl);
+    netTotal += totalCookiesPerHour;
+
+    cookiestands.appendChild(trEl);
+  }
+
+}
+
+makesNetTotalRow();
+
+//form listener for adding new stores.
 document.getElementById('newstore').addEventListener('click', function() {
+  var elem = document.getElementById('total');//part one of deleting the total row
+  elem.parentElement.removeChild(elem);//part Two of deleting the total row
+
   event.preventDefault(); //prevents page reload
-  console.log('click');
   var newStoreName = document.getElementById('storename').value;
-  console.log(document.getElementById('storename').value);
   var newStoreMin = document.getElementById('mincust').value;
-  console.log(document.getElementById('mincust').value);
   var newStoreMax = document.getElementById('maxcust').value;
-  console.log(document.getElementById('maxcust').value);
   var newStoreAvg = document.getElementById('avgcook').value;
-  console.log(document.getElementById('avgcook').value);
+
   // event.preventDefault(); //prevents page reload
   var newStore = new MakeLocation(newStoreName, parseInt(newStoreMin), parseInt(newStoreMax), parseInt(newStoreAvg));
 
   newStore.calcRandCustByHour();
-  console.log(newStore.randCustByHour);
   newStore.calcCookiesSoldByHour();
-  console.log(newStore.cookiesSoldByHour);
   newStore.calcTotalCookies();
-  console.log(newStore.totalCookies);
 
   function makeNewStoresRow() {
     var cookiestands = document.getElementById('cookiestands');
@@ -129,6 +157,7 @@ document.getElementById('newstore').addEventListener('click', function() {
     newStore.calcRandCustByHour();
     newStore.calcCookiesSoldByHour();
     newStore.calcTotalCookies();
+
     for( var j = 0; j < hours.length; j++) {
       var tdEl = document.createElement('td');
       tdEl.textContent = newStore.cookiesSoldByHour[j];
@@ -139,28 +168,6 @@ document.getElementById('newstore').addEventListener('click', function() {
     trEl.appendChild(tdEl);
     cookiestands.appendChild(trEl);
   }
-  makeNewStoresRow();
-
+  makeNewStoresRow();//makes new store row and populates information
+  makesNetTotalRow();//remakes bottom totals row once new store from the form is completed.
 });
-// newStore.calcTotalCookies();
-
-// this.calcCookiesSoldByHour();
-// this.calcTotalCookies();
-
-//Generates footer row and genertes total row data
-// function makesNetTotalRow(index) {
-//   var cookiestands = document.getElementById('cookiestands');
-//   var trEl = document.createElement('tr');
-//   trEl.textContent = 'Total: ';
-//   console.log(trEl);
-//   for( var l = 0; l < hours.length; l++) {
-//     var tdEl = document.createElement('td');
-//     tdEl.textContent = 'stuff' ;
-//     console.log(tdEl);
-//     trEl.appendChild(tdEl);
-//
-//   }
-//   cookiestands.appendChild(trEl);
-// }
-//
-// makesNetTotalRow();
