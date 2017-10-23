@@ -80,6 +80,7 @@ function makeStoresRow(index) {
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr'); //creates table div.
   trEl.textContent = allLocations[index].name;
+  // console.log(trEl);
   allLocations[index].calcRandCustByHour();
   allLocations[index].calcCookiesSoldByHour();
   allLocations[index].calcTotalCookies();
@@ -108,7 +109,7 @@ function makesNetTotalRow() {
   var cookiestands = document.getElementById('cookiestands');
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-  tdEl.setAttribute('id','total');// gives created row an ID.
+  trEl.setAttribute('id','total');// gives created row an ID.
   tdEl.textContent = 'Total: ';
   trEl.appendChild(tdEl);
   // cookiestands.appendChild(trEl);
@@ -121,12 +122,15 @@ function makesNetTotalRow() {
     // console.log(totalCookiesPerHour);
     tdEl = document.createElement('td');
     tdEl.textContent = totalCookiesPerHour;
-    //console.log(tdEl);
+    // console.log(tdEl);
     trEl.appendChild(tdEl);
     netTotal += totalCookiesPerHour;
-
     cookiestands.appendChild(trEl);
   }
+  tdEl = document.createElement('td');
+  tdEl.textContent = netTotal;
+  // console.log(tdEl);
+  trEl.appendChild(tdEl);
 
 }
 
@@ -154,9 +158,6 @@ document.getElementById('newstore').addEventListener('click', function() {
     var cookiestands = document.getElementById('cookiestands');
     var trEl = document.createElement('tr'); //creates table div.
     trEl.textContent = newStore.name;
-    newStore.calcRandCustByHour();
-    newStore.calcCookiesSoldByHour();
-    newStore.calcTotalCookies();
 
     for( var j = 0; j < hours.length; j++) {
       var tdEl = document.createElement('td');
@@ -164,7 +165,7 @@ document.getElementById('newstore').addEventListener('click', function() {
       trEl.appendChild(tdEl);
     }
     var tdEl = document.createElement('td');
-    tdEl.textContent = newStore.totalCookies[0];
+    tdEl.textContent = newStore.totalCookies;
     trEl.appendChild(tdEl);
     cookiestands.appendChild(trEl);
   }
