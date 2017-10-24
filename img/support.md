@@ -73,11 +73,11 @@ These numbers are simply Pat's estimates for now, but eventually, once there has
 
 Besides using the picture of the fish... you should use...
 
-1. A custom Google font for highlights
-2. A specified standard san-serif web font for data (such as Arial, Verdana, or Helvetica)
+---done 1. A custom Google font for highlights
+---done 2. A specified standard san-serif web font for data (such as Arial, Verdana, or Helvetica)
 3. A specified standard serif web font for text (such as Georgia, Times, etc.)
 4. Specified different font colors for all three font usages
-5. A background color for the default page background (make sure font colors have good contrast and are readable on this background)
+---done 5. A background color for the default page background (make sure font colors have good contrast and are readable on this background)
 6. A different background color for elements such boxes and tables (so make sure the font colors contrast against this well, too!)
 7. Anything else you'd like to add related to style. But remember: simplicity, clarity,  and consistency are good things in design.
 8. Be thoughtful about layout and overall organization of the page.
